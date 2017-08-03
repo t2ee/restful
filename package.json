@@ -1,7 +1,7 @@
 {
   "name": "@t2ee/restful",
   "version": "1.0.1",
-  "description": restful",
+  "description": "restful",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
