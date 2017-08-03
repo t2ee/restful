@@ -1,7 +1,7 @@
 import {
     Metadata,
 } from '@t2ee/core';
-import RestfulClient from './RestfulCLient';
+import RestfulClient from './RestfulClient';
 import MethodDescription from './MethodDescription';
 
 export default class RestfulService {
@@ -93,7 +93,7 @@ export default class RestfulService {
                 type: Metadata.get(`t2ee:restful:method:${key}:type`, service.prototype) || 'json',
             };
         }
-        return new Proxy({}, new RestfulClient(
+        return new Proxy({} as any, new RestfulClient(
             description,
             this._baseUrl,
             this._headers,
