@@ -83,7 +83,7 @@ export default class RestfulService {
         const description: {[key: string]: MethodDescription} = {};
         const methods = Metadata.get('t2ee:restful:method', service.prototype);
         for (const key in methods) {
-            const parameter = Metadata.get(`t2ee:restful:method:${key}`, service.prototype);
+            const parameter = Metadata.get(`t2ee:restful:method:${key}`, service.prototype) || [];
             const headers = Metadata.get(`t2ee:restful:method:${key}:headers`, service.prototype) || {};
             description[key] = {
                 method: methods[key].method.toLowerCase(),

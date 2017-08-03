@@ -1,22 +1,27 @@
 {
   "name": "@t2ee/restful",
-  "version": "1.0.0-alpha-1",
+  "version": "1.0.0",
   "description": "## Auto Configuration",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "tsc -p src/tsconfig.json"
+    "build": "rm -rf dist && tsc -p src/tsconfig.json",
+    "build-test": "rm -rf test-dist/ && tsc -p src/tsconfig.test.json",
+    "test": "npm run build-test && ava test-dist/*.test.js",
+    "coverage": "npm run build-test && nyc ava -- test-dist/*.test.js"
   },
   "author": "Qiaosen Huang",
-  "license": "MIT",
-  "dependencies": {
+  "license": "Apache-2.0",
+  "peerRdependencies": {
     "@t2ee/core": "^0.1.9",
-    "@types/superagent": "^3.5.3",
-    "superagent": "^3.5.2",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "reflect-metadata": "^0.1.10"
   },
-  "devDependencies": {},
+  "dependencies": {
+    "@types/superagent": "^3.5.3",
+    "superagent": "^3.5.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/t2ee/restful.git"
@@ -34,5 +39,14 @@
   "bugs": {
     "url": "https://github.com/t2ee/restful/issues"
   },
-  "homepage": "https://github.com/t2ee/restful#readme"
+  "homepage": "https://github.com/t2ee/restful#readme",
+  "devDependencies": {
+    "ava": "^0.21.0",
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "nyc": "^11.1.0"
+  },
+  "directories": {
+    "doc": "docs"
+  }
 }

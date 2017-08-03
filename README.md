@@ -1,21 +1,36 @@
+<p align="center">
+    <a href="http://t2ee.org">
+        <img width="200" src="http://t2ee.org/img/logos/t2ee.png">
+    </a>
+</p>
+<p align="center">
+    <a href="http://restful.t2ee.org">
+        <img width="200" src="http://t2ee.org/img/logos/restful.png">
+    </a>
+</p>
+
+<p align="center">
+    <a href="https://travis-ci.org/t2ee/restful">
+        <img src="https://img.shields.io/travis/t2ee/restful/master.svg?style=flat-square">
+    </a>
+    <a href="https://coveralls.io/r/t2ee/restful?branch=master">
+        <img src="https://img.shields.io/coveralls/t2ee/restful/master.svg?style=flat-square">
+    </a>
+</p>
+
 # Introduction
 
-This is a `typescript` library for create simple restful services.
+`@t2ee/restful` allows you to write restful clients that have verbal meanings, easy to read and easy to code.
 
-You need to also install `reflect-metadata` on your own
+For detailed introduction and examples, please visit [core.t2ee.org](http://core.t2ee.org).
 
-# Usage
+# Installation
+
+`npm i reflect-metadata @t2ee/core @t2ee/restful -S`
 
 ## Basic Example
 
 ```typescript
-import {
-    GET,
-    Path,
-    Query,
-    RestfulService,
-}
-
 interface Repository {
     id: number;
     name: string;
@@ -33,43 +48,3 @@ const client = builder.create(GithubRepo);
 const repos = await client.listUserRepos('t2ee', 'all');
 
 ```
-
-## POST Request
-
-```typescript
-@POST('/users/new')
-createUser(@Body user: User): Promise<User> {return null}
-```
-
-## Form Example
-
-```typescript
-@FormUrlEncoded
-@POST('/users/new')
-createUser(@Field('name') name, @Field('age') age): Promise<User> {return null}
-```
-
-## Multipart Example
-
-```typescript
-@Multipart
-@POST('/upload')
-upload(@Field('file_name') name: string, @Part('file') file: string | Buffer): Promise<void>;
-```
-
-## Static Headers
-```typescript
-@Headers('Cookie', '123')
-@Headers({ 'Cookie': '345' })
-get(): Promise<User> {return null}
-```
-
-# API
-
-## @GET(), @POST(), @DELETE(), @PUT(), @Multipart, @FormUrlEncoded, @Headers
-
-These decorators can be used on methods only.
-
-## @Param(), @Path(), @Query(), @QueryMap, @Header(), @HeaderMap, @Field(), @FieldMap, @Body
-
-These decorators can be used on method parameters only.
