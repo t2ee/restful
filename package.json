@@ -1,7 +1,7 @@
 {
   "name": "@t2ee/restful",
-  "version": "1.0.0",
-  "description": "## Auto Configuration",
+  "version": "1.0.1",
+  "description": restful",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -14,8 +14,8 @@
   "author": "Qiaosen Huang",
   "license": "Apache-2.0",
   "peerRdependencies": {
-    "@t2ee/core": "^0.1.9",
-    "typescript": "^2.4.2",
+    "@t2ee/core": "0.1.x",
+    "typescript": "2.x",
     "reflect-metadata": "^0.1.10"
   },
   "dependencies": {
