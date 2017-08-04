@@ -1,11 +1,11 @@
 <p align="center">
-    <a href="http://t2ee.org">
-        <img width="200" src="http://t2ee.org/img/logos/t2ee.png">
+    <a href="//t2ee.org">
+        <img width="200" src="//t2ee.org/img/logos/t2ee.png">
     </a>
 </p>
 <p align="center">
-    <a href="http://restful.t2ee.org">
-        <img width="200" src="http://t2ee.org/img/logos/restful.png">
+    <a href="//restful.t2ee.org">
+        <img width="200" src="//t2ee.org/img/logos/restful.png">
     </a>
 </p>
 
@@ -22,7 +22,7 @@
 
 `@t2ee/restful` allows you to write restful clients that have verbal meanings, easy to read and easy to code.
 
-For detailed introduction and examples, please visit [core.t2ee.org](http://core.t2ee.org).
+For detailed introduction and examples, please visit [core.t2ee.org](//core.t2ee.org).
 
 # Installation
 
