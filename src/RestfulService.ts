@@ -80,7 +80,7 @@ export default class RestfulService {
     }
 
     public create<T>(service: new (...args) => T): T {
-        const description = this.extract(service);
+        const description = RestfulService.extract(service);
         return new Proxy({} as any, new RestfulClient(
             description,
             this._baseUrl,
@@ -92,7 +92,7 @@ export default class RestfulService {
         ));
     }
 
-    public extract<T>(service: new (...args) => T): {[key: string]: MethodDescription}  {
+    public static extract<T>(service: new (...args) => T): {[key: string]: MethodDescription}  {
         const description: {[key: string]: MethodDescription} = {};
         const methods = Metadata.get('t2ee:restful:method', service.prototype);
         for (const key in methods) {
